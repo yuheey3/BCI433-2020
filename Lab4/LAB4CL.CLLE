@@ -1,0 +1,36 @@
+000100200616             PGM
+000101200616             DCLF       LABDF
+000102200616             DCL        VAR(&SECURITY) TYPE(*CHAR) LEN(2)
+000103200616             /*** M A I N L I N E   *****/
+000104200616             SndRcvf
+000105200616             DoWhile    (&In03 = '0')
+000106200616                /*RESET*/
+000107200616                ChgVar     &in30 '0'
+000108200616                ChgVar     &MSGTxt ' '
+000109200616
+000110200616                Select
+000111200616                   When       (&Option = '1' *or &option = '01') CallSubr OPTION1
+000112200616
+000113200616                   Otherwise  ChgVar &in30 '1'
+000114200616                EndSelect
+000115200616
+000116200616                SndRcvf
+000117200616             Enddo
+000118200616             /*** S U B R O U T I N E S   *****/
+000119200616             SUBR       OPTION1
+000120200616                RtvSysVal  SYSVAL(QSecurity) RTNVAR(&Security)
+000121200616                Select
+000122200616                   When       (&Security = '10' ) ChgVar  &MsgTxt  ('Security Level is 10  and +
+000123200616                                not supported')
+000124200616                   When       (&Security = '20' ) ChgVar  &MsgTxt  ('Password security only at +
+000125200616                                level' *Bcat  &Security)
+000126200616                   When       (&Security = '30' ) ChgVar    &MsgTxt ('Password and object +
+000127200616                                security at level 30')
+000128200616                   When       (&Security = '40' ) ChgVar    &MsgTxt ('Password, object, and +
+000129200616                                operating system integrity at level 40')
+000130200616                   When       (&Security = '50' ) ChgVar    &MsgTxt  ('Password, object, and +
+000131200616                                enhanced operating system integrity at level 50' )
+000132200616                EndSelect
+000133200616             EndSubr
+000134200616             ENDPGM
+000135200616

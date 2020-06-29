@@ -1,0 +1,45 @@
+000001200608     A          R GETINCOME
+000003200608     A                                  2 28' I N C O M E   T A X E S'
+000004200603    -
+000005200608     A                                  1  4USER
+000006200608     A                                  1 70DATE
+000007200610     A                                      EDTCDE(Y)
+000008200608     A                                  4 11'Income: '
+000009200608     A  98                              4 37' Zero Income Amount'
+000010200608     A                                  6  9' Married?'
+000011200608     A                                  6 23' Y/N '
+000012200608     A  97                              6 38'BLANK MARRIED STATUS'
+000013200608     A                                  9 21' A L L O W A B L E   D E D U C T I-
+000014200608     A                                       O N S'
+000015200608     A                                 11  6'Student Expense:'
+000016200608     A                                 11 43' Charitable Donations:'
+000017200608     A            INCOMEAMT      8Y 0B  4 23
+000018200608     A  60                                  DSPATR(PR)
+000019200608     A  98                                  DSPATR(PC)
+000020200608     A                                      EDTCDE(2)
+000021200608     A            MARRIED        1   B  6 21
+000022200608                                            VALUES('Y' 'N')
+000023200608     A  60                                  DSPATR(PR)
+000024200608     A  97                                  DSPATR(PC)
+000025200608     A            STDEXPENSE     7  0B 11 25EDTCDE(2)
+000026200608     A  60                                  DSPATR(PR)
+000027200608     A            DONATIONS      7  0B 11 67EDTCDE(2)
+000028200608     A  60                                  DSPATR(PR)
+000029200608     A          R YOURTAX
+000030200608     A                                      OVERLAY
+000031200610     A                                      CF03(03 'EXIT PROGRAM')
+000032200608     A                                 12  5' Deductions Allowed:'
+000033200608     A            DEDUCTIONS     6Y 0O 12 35EDTCDE(1)
+000034200608     A                                 14  6'Adjusted Income Amount:'
+000035200608     A                                 18  7' Taxes Owing:'
+000036200608     A                                 16  9' Tax Rate: '
+000037200608     A                                 20  6'Your Taxes Are Due in '
+000038200608     A                                 20 34' Days '
+000039200608     A            AINCOMEAMT     7  0O 14 33EDTCDE(2)
+000040200608     A            TAXRATE        2Y 2O 16 39EDTCDE(2)
+000041200608     A            TAXAMT         6Y 0O 18 35EDTCDE(2)
+000042200608     A            DAYSTOPAY      3Y 0O 20 29EDTCDE(2)
+000043200608     A                                 22 69'Yuki Waka'
+000044200608     A                                 22  7'F3 - Exit'
+000045200608
+000100      

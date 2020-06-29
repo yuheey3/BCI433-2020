@@ -1,0 +1,1 @@
+000100200601     FSTUDACCTS IP   E             DISK

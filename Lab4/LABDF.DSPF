@@ -1,0 +1,28 @@
+000100200616     A                                      DSPSIZ(24 80 *DS3)
+000101200616     A          R RECORD1
+000102200616     A                                      CA03(03)
+000103200617     A                                      CF21(21 'command')
+000104200616     A                                  1 64DATE
+000105200616     A                                      EDTCDE(Y)
+000106200616     A                                  2 64TIME
+000107200616     A                                  3 64'LAB4DF'
+000108200616     A                                  1 38'Lab 4'
+000109200616     A                                  6  3'Please select one of the following-
+000110200616     A                                       options:'
+000111200617     A                                  7 14'1.  Signed on Users Message Queue'
+000112200617     A                                  8 14'2.  Run Income Tax Application'
+000113200617     A                                  9 14'3.  Maximum Invalid Signon Attempts
+000114200617     A                                      Allowed'
+000115200617     A                                 10 14'4.  Previous sign on by signed on
+000116200617     A                                      user'
+000117200617     A                                 11 14'5.  Operating system level'
+000118200616     A                                 14 17'Option:'
+000119200616     A            OPTION         2A  B 14 25
+000120200616     A  30                                  DSPATR(RI)
+000121200616     A  30                                  DSPATR(PC)
+000122200616     A            MSGTXT        70A  O 18  6
+000123200616     A                                 20  4'F3=Exit'
+000124200616     A  30                             14 29'Valid option must be entered'
+000125200617     A                                  1  3'Yuki Waka'
+000126200617     A                                 20 25'F21=Comand Line'
+000127200617
