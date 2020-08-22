@@ -1,0 +1,24 @@
+000010200726     A*%%TS  SD  20200726  182818  DM434A40    REL-V7R4M0  5770-WDS
+000020200726     A*%%EC
+000030200726     A                                      DSPSIZ(24 80 *DS3)
+000040200726     A                                      INDARA
+000050200726     A                                      CF03(03)
+000060200726     A          R INPUT
+000070200726     A*%%TS  SD  20200726  182818  DM434A40    REL-V7R4M0  5770-WDS
+000080200726     A                                  8 12'Ente Day Number: '
+000090200726     A            DAYIN          1Y 0B  8 31
+000100200726     A  99                                  DSPATR(PR)
+000110200726     A                                      EDTCDE(4)
+000120200726     A                                  1  2USER
+000130200805     A                                  3  2'Yuki Waka'
+000140200726     A                                  1 21'U S E R   D E F I N E D   F U N C -
+000150200726     A                                      T I O N'
+000160200726     A                                  1 69DATE
+000170200726     A                                      EDTCDE(Y)
+000180200726     A            SOLUTION      15   O  8 40
+000190200404     A          R OUTPUT
+000200200404     A*%%TS  SD  20200404  133611  DJ433A40    REL-V7R4M0  5770-WDS
+000210200404     A                                      OVERLAY
+000220200404     A                                 14 11'Day Name: '
+000230200404     A            DAYNAME        9A  O 14 24
+000240200404     A                                 22  7'F3 - Exit'

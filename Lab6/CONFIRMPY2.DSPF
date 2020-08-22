@@ -1,0 +1,24 @@
+000001200623     A          R RECORD1
+000002200623     A                                  2 70DATE
+000003200623     A                                      EDTCDE(Y)
+000004200623     A                                  3  3'Yuki Waka'
+000005200623     A                                  2  3USER
+000006200623     A                                  3 70TIME
+000007200623     A                                  2 21'S E N E C A  Payroll  Program  Com-
+000008200623     A                                      pleted'
+000009200623     A                                  5 11'Rates:'
+000010200623     A                                  6 22'Day Rate:'
+000011200623     A                                  7 22'Afternoon Rate:'
+000012200623     A                                  8 22'Night Rate:'
+000013200707     A                                 11 11'Totals:'
+000014200707     A                                 12 22'Regular Pay:'
+000015200707     A                                 13 22'Overtime pay:'
+000016200707     A                                 14 22'Company Payout:'
+000017200623     A            DAYRATE        5  2O  6 42EDTCDE(1)
+000018200623     A            AFTNRATE       5Y 2O  7 42EDTCDE(1)
+000019200623     A            NIGHTRATE      5Y 2O  8 42EDTCDE(1)
+000020200707     A            TOTREGPAY      9Y 2O 12 42EDTCDE(1)
+000021200707     A            TOTOVTPAY      9Y 2O 13 42EDTCDE(1)
+000022200707     A            TOTWKPAY       9Y 2O 14 41EDTCDE(1 $)
+000023200707     A            SHIFTTYPE     30   O 10 24
+000100      

@@ -1,0 +1,59 @@
+000100200707             PGM
+000200200707             DCL        &OutQ       *CHAR 10
+000300200707             DCL        &OutQLib    *CHAR 10
+000400200707             /*Complete the difinition of 2 (other) variables*/
+000500200707             DCL        &SHIFT      *CHAR 30
+000600200707             DCL        &SHIFTTYPE  *CHAR 30
+000700200707
+000800200707             RTVUSRPRF  OUTQ(&OUTQ) OUTQLIB(&OUTQLIB)
+000900200707             CLROUTQ    &OutQLib/&OutQ
+001000200707
+001100200707             /*You may add SENECAPAY to LIBL here and monitor message*/
+001200200707             ADDLIBLE   SENECAPAY
+001300200707             MONMSG     MSGID(CPF2103)
+001400200707
+001500200707             SNDUSRMSG  MSG('1 - Day Shift, 2 - Afternoon Shift, 3- Night Shiftm 4 - All +
+001600200707                          Shifts 5 - EXIT') MSGRPY(&SHIFT)
+001700200707             DOWHILE    (&Shift  *NE '5')
+001800200707                Select
+001900200707                   When       (&Shift = '1') Do
+002000200707                      CHGVAR     &ShiftType     'D A Y    S H I F T'
+002100200707                      OVRPRTF    FILE(PAYRPT2)  SPLFNAME(DAYSHIFT)
+002200200707                      OVRDBF     SHIFTWEEK DAYS
+002300200714                      CALLPRC    PAYROLLPG3  PARM(&SHIFTTYPE)
+002400200707                      DSPSPLF    DAYSHIFT  SPLNBR(*LAST)
+002500200707                   ENDDO
+002600200707                   When       (&Shift = '2') Do
+002700200707                      CHGVAR     &ShiftType     'A F T E R N O O N    S H I F T'
+002800200707                      OVRPRTF    FILE(PAYRPT2)  SPLFNAME(AFTRNSHIFT)
+002900200707                      OVRDBF     SHIFTWEEK AFTERNOONS
+003000200714                      CALLPRC    PAYROLLPG3  PARM(&SHIFTTYPE)
+003100200707                      DSPSPLF    AFTRNSHIFT  SPLNBR(*LAST)
+003200200707                   ENDDO
+003300200707                   When       (&Shift = '3') Do
+003400200707                      CHGVAR     &ShiftType     'N I G H T     S H I F T'
+003500200707                      OVRPRTF    FILE(PAYRPT2)  SPLFNAME(NIGHTSHIFT)
+003600200707                      OVRDBF     SHIFTWEEK NIGHTS
+003700200714                      CALLPRC   PAYROLLPG3  PARM(&SHIFTTYPE)
+003800200707                      DSPSPLF    NIGHTSHIFT  SPLNBR(*LAST)
+003900200707                   ENDDO
+004000200707                   When       (&Shift = '4') Do
+004100200707                      CHGVAR     &ShiftType     'A L L    S H I F T S'
+004200200707                      OVRPRTF    FILE(PAYRPT2)  SPLFNAME(SHIFTWEEKS)
+004300200707                      OVRDBF     SHIFTWEEK ALLSHIFTS
+004400200714                      CALLPRC    PAYROLLPG3  PARM(&SHIFTTYPE)
+004500200707                      DSPSPLF    SHIFTWEEKS  SPLNBR(*LAST)
+004600200707                   ENDDO
+004700200707
+004800200707                ENDSELECT
+004900200707
+005000200707                SNDUSRMSG  MSG('1 - Day Shift, 2 - Afternoon Shift, 3- Night Shiftm 4 - All +
+005100200707                             Shifts 5 - EXIT') MSGRPY(&SHIFT)
+005200200707             ENDDO
+005300200707
+005400200707             SNDPGMMSG  MSG('Okay to clear out and output queue in school - Never at work in +
+005500200707                          production')
+005600200707
+005700200707             WRKOUTQ    &OutQLib/&OutQ
+005800200707             ENDPGM
+005900200707
